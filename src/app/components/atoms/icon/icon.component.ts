@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconInterface } from 'src/app/types';
+import { IconInterface } from '../../../types';
 
 const baseIcon = {
   name: 'home',
