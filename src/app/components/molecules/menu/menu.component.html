@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+      <li *ngFor="let item of items" (click)="menuItemSelected.emit(item.value)">
+        <app-icon [icon]="item.icon"></app-icon>
+        <span class="tooltip">
+          {{ item.label }}
+          <span class="triangle"></span>
+        </span>
+      </li>
+    </ul>
+  </nav>

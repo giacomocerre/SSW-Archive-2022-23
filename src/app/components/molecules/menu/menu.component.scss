@@ -1,0 +1,51 @@
+@import "../../../styles/variables.scss";
+
+nav {
+    background-color: $dark-blue;
+    height: 100vh;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    width: 70px;
+    text-align: center;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  li:hover {
+    background-color: $light-blue;
+  }
+  
+  span.tooltip {
+    position: absolute;
+    background: #00ccbf;
+    left: 68px;
+    top: 0;
+    width: 80px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-transform: uppercase;
+    color: $light-main-color;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  li:hover .tooltip {
+    opacity: 1;
+  }
+  
