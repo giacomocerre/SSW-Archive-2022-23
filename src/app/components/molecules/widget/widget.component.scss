@@ -1,0 +1,38 @@
+.app-widget-container {
+    overflow: hidden;
+  }
+  
+  .app-home-widget {
+    float: left;
+    width: 20%;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  p.app-widget-value {
+    color: #666;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    font-size: 0.9em;
+  }
+  
+  h3.app-widget-title {
+    position: relative;
+    left: 26px;
+    margin: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  span.app-widget-measure {
+    font-size: 2em;
+    margin-right: 10px;
+  }
+  

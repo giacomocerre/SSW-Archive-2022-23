@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IconInterface } from '../../../types';
 
-const baseIcon = {
+const DEFAULT_ICON: IconInterface = {
   name: 'home',
   classes: '',
   width: 35,
@@ -18,5 +18,5 @@ const baseIcon = {
   standalone: true,
 })
 export class IconComponent {
-  @Input() icon: IconInterface = baseIcon;
+  @Input() icon: IconInterface = DEFAULT_ICON;
 }

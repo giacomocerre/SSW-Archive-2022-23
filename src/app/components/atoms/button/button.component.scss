@@ -1,0 +1,20 @@
+button {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .app-button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .app-button-icon:hover {
+    background: lightblue;
+    border-color: lightblue;
+  }

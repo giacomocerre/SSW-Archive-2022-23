@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { HeaderComponent } from './components/molecules';
 import { ArchiveComponent,HomeComponent } from './components/views';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { ArchiveComponent,HomeComponent } from './components/views';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [HeaderComponent, HomeComponent, ArchiveComponent]
+  imports: [CommonModule, HeaderComponent, HomeComponent, ArchiveComponent]
 })
 export class AppComponent {
+  selectedMenuItem: string = 'home';
 }

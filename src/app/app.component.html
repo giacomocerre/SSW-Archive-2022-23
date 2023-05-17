@@ -1,3 +1,13 @@
-<section>
-    <app-header>Loading...</app-header>
-</section>
+<div class="app-container">
+    <app-header (menuItemSelected)="selectedMenuItem = $event"></app-header>
+    <div class="app-body">
+        <div class="app-interactions">
+            <div *ngIf="selectedMenuItem === 'home'">
+                <app-home (menuItemSelected)="selectedMenuItem = $event"></app-home>
+            </div>
+            <div *ngIf="selectedMenuItem === 'archive'">
+                <app-archive></app-archive>
+            </div>
+        </div>
+    </div>
+</div>

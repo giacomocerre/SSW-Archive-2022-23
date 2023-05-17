@@ -1,13 +1,22 @@
-/* Add application styles & imports to this file! */
 * {
-    font-family: $font-family;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: $light-main-color;
-  }
+  font-family: $font-family;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: $light-main-color;
+}
+
+.app-body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-interactions h1{
+  margin: 0;
+  padding-top: 20px;
+}
