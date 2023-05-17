@@ -1,52 +1,47 @@
-.app-function-sections {
-    overflow: hidden;
-  }
-  
-  .app-widget-container {
-    margin-bottom: 50px;
-    overflow: hidden;
-  }
-  
-  section.app-function-section {
-    float: left;
-    width: 40%;
-    padding: 2.5%;
-    margin: 2%;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  section.app-function-section h3 {
-    margin: 0;
-  }
-  
-  section.app-archive-section {
-    margin-left: 0;
-  }
-  
-  section.app-function-section p {
-    margin-bottom: 50px;
-  }
-  
-  .app-home-button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: transparent;
-    border: 1px solid #222;
-    border-radius: 5px;
-    font-weight: 500;
-    cursor: pointer;
-    color: #222;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .app-home-button:hover {
-    background-color: #ff5f5d;
-    border: 1px solid #ff5f5d;
-  }
-  
-  .app-last-5 {
-    overflow: hidden;
-  }
-  
+@import "../../../styles/variables.scss";
+
+.app-function-sections,
+.app-widget-container,
+.app-last-5 {
+  overflow: hidden;
+}
+
+.app-widget-container,
+section.app-function-section p {
+  margin-bottom: 50px;
+}
+
+section.app-function-section {
+  float: left;
+  width: 40%;
+  padding: 2.5%;
+  margin: 2%;
+  background: $ligh-secondary-color;
+  border: $light-border-1;
+  border-radius: 10px;
+}
+
+section.app-function-section h3 {
+  margin: 0;
+}
+
+section.app-archive-section {
+  margin-left: 0;
+}
+
+.app-home-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border: $dark-border-1;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  color: $dark-secondary-color;
+  transition: $ease-in-out-sec03;
+}
+
+.app-home-button:hover {
+  background-color: $default-red;
+  border: $red-border-1;
+}

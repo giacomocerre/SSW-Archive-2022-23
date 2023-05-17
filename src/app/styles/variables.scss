@@ -1,13 +1,81 @@
-// Primary color
+//************* COLORS ********************//
 
+// >> Primary colors
 $light-main-color: #f6f6f6;
 $dark-main-color: #333;
 
+// >> Secondary colors
+$ligh-secondary-color: #fff;
+$dark-secondary-color: #000;
 
+// >> Gray Colors
+$light-gray-color: #ccc;
 
+// >> Blue Colors
 $dark-blue: #3f7c85;
-$light-blue:#00ccbf;
+$light-blue: #00ccbf;
+$default-blue: lightblue;
 
+// >> Red Colors
+$default-red: #ff5f5d;
 
-//FONT
+//**************************************//
+
+//************* FONT ********************//
+
 $font-family: "Ubuntu", sans-serif;
+
+//**************************************//
+
+//************* TRASITION EFFECTS ********************//
+
+$ease-in-out-sec01: all 0.1s ease-in-out;
+$ease-in-out-sec02: all 0.2s ease-in-out;
+$ease-in-out-sec03: all 0.3s ease-in-out;
+$ease-in-out-sec04: all 0.4s ease-in-out;
+$ease-in-out-sec05: all 0.5s ease-in-out;
+$ease-in-out-sec10: all 1s ease-in-out;
+
+//****************************************************//
+
+//************* BORDERS ********************//
+
+// >> Borders light gray
+$light-border-1: 1px solid #ccc;
+$light-border-2: 2px solid #ccc;
+$light-border-3: 3px solid #ccc;
+$light-border-4: 4px solid #ccc;
+$light-border-5: 5px solid #ccc;
+
+// >> Borders dark gray
+$dark-border-1: 1px solid #333;
+$dark-border-2: 2px solid #333;
+$dark-border-3: 3px solid #333;
+$dark-border-4: 4px solid #333;
+$dark-border-5: 5px solid #333;
+
+// >> Borders red
+$red-border-1: 1px solid #ff5f5d;
+$red-border-2: 2px solid #ff5f5d;
+$red-border-3: 3px solid #ff5f5d;
+$red-border-4: 4px solid #ff5f5d;
+$red-border-5: 5px solid #ff5f5d;
+
+//*********************************************//
+
+//************************* MIXIN ***************************************//
+
+// Generaliziations
+$flex-centered-container: (
+  display: flex,
+  align-items: center,
+  justify-content: center,
+);
+
+@mixin flexCenteredContainer {
+  display: map-get($flex-centered-container, display);
+  align-items: map-get($flex-centered-container, align-items);
+  justify-content: map-get($flex-centered-container, justify-content);
+}
+
+//***********************************************************************//

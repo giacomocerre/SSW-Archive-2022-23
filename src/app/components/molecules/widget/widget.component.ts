@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconInterface, WidgetInterface } from '../../../types';
+import { IconInterface, WidgetInterface } from '../../../types/interfaces';
 import { IconComponent } from '../../atoms';
 
 @Component({

@@ -1,0 +1,24 @@
+<div class="app-sigle-book">
+  <div class="app-single-book-content">
+    <p class="app-single-book-position">
+      Posizione in archivio:
+      <span class="app-single-book-position-value">{{ item.position }}</span>
+    </p>
+    <h3 class="app-single-book-title">{{ item.title }}</h3>
+    <h4 class="app-single-book-author">{{ item.author }}</h4>
+    <p class="app-single-book-onLoan">
+      Diponibilità:
+      <app-icon
+        [icon]="{
+          name: item.onLoan ? 'cancel' : 'check_circle',
+          color: item.onLoan ? 'red' : 'green',
+          classes: 'app-single-book-icon app-icon-circle'
+        }"
+      ></app-icon>
+    </p>
+    <p class="app-single-book-date">
+      Aggiunto in data:
+      <span class="app-single-book-date-value">{{ item.date }}</span>
+    </p>
+  </div>
+</div>

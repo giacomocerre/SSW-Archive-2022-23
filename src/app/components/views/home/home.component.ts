@@ -1,10 +1,11 @@
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { RemoteDatabaseService } from 'src/app/services/remote-db.service';
-import { ButtonComponent } from '../../atoms';
-import { WidgetComponent } from '../../molecules/widget/widget.component';
-import { BookInterface } from 'src/app/types';
 import { forkJoin } from 'rxjs';
+import { RemoteDatabaseService } from '../../../services/remote-db.service';
+import { ButtonComponent } from '../../atoms';
+import { WidgetComponent, BookCardComponent } from '../../molecules';
+import { Book } from '../../../types/classes';
 
 @Component({
   selector: 'app-home',
@@ -12,18 +13,17 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./home.component.scss'],
   standalone: true,
   providers: [RemoteDatabaseService],
-  imports:[HttpClientModule, ButtonComponent, WidgetComponent]
+  imports:[CommonModule, HttpClientModule, ButtonComponent, WidgetComponent, BookCardComponent]
 })
 export class HomeComponent implements OnInit{
   @Output() menuItemSelected = new EventEmitter<string>();
   totalBooks: number = 0;
   totalOnLoan: number = 0;
-  lastBooks: BookInterface[] = [];
+  lastBooks: Book[] = [];
 
   constructor(private db: RemoteDatabaseService){}
 
-  ngOnInit(): void {
-
+  ngOnInit() {
     forkJoin([
       this.getBooksCount('total'),
       this.getBooksCount('onLoan'),
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit{
 
     //Recupera i 5 ultimi libri inseriti
     this.db.getLastAddedBooks().subscribe({
-      next: (data: BookInterface[]) => {
+      next: (data: Book[]) => {
         this.lastBooks = data;
       },
       error: (err: Error) => {

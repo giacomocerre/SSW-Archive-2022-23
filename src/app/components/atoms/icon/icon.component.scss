@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .app-icon-image {
     position: relative;
     top: 3px;
@@ -5,9 +7,7 @@
   }
   
   span.app-icon-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenteredContainer;
     padding: 10px;
     border-radius: 100%;
   }

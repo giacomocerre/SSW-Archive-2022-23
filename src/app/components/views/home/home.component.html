@@ -56,7 +56,14 @@
     [total]="totalOnLoan"
     measure="prestati"
     title="Totale libri in prestito"
-    classes="app-total-book-widget app-home-widget"
+    classes="app-onloan-book-widget app-home-widget"
     >Loading...</app-widget
   >
+</div>
+
+<div class="app-last-5">
+  <h2>Gli ultimi 5 libri aggiunti sono:</h2>
+  <div *ngFor="let book of lastBooks">
+    <app-book-card [item]="book"></app-book-card>
+  </div>
 </div>

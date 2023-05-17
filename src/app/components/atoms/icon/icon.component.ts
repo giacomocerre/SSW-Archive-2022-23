@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconInterface } from '../../../types';
+import { IconInterface } from '../../../types/interfaces';
 
 const DEFAULT_ICON: IconInterface = {
   name: 'home',
@@ -8,7 +8,6 @@ const DEFAULT_ICON: IconInterface = {
   height: 35,
   color: 'red',
   bgColor: 'none'
-
 }
 
 @Component({

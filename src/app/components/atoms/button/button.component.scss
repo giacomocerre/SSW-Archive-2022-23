@@ -1,20 +1,15 @@
-button {
-    background-color: transparent;
-    border: none;
-  }
-  
-  .app-button-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .app-button-icon:hover {
-    background: lightblue;
-    border-color: lightblue;
-  }
+@import "../../../styles/variables.scss";
+
+.app-button-icon {
+  @include flexCenteredContainer;
+  background: $ligh-secondary-color;
+  border: $light-border-1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: $ease-in-out-sec03;
+}
+
+.app-button-icon:hover {
+  background: $default-blue;
+  border-color: $default-blue;
+}
