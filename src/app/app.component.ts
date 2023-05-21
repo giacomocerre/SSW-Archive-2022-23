@@ -1,16 +1,16 @@
-import { Component, EventEmitter } from '@angular/core';
-import { HeaderComponent } from './components/molecules';
-import { ArchiveComponent,HomeComponent } from './components/views';
-import { CommonModule } from '@angular/common';
-
+import { Component } from '@angular/core';
+import { ViewComponent } from './components/view/view.component';
+import { SidebarComponent } from './components/molecules';
+import { ArchiveComponent } from './components/view/views';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [CommonModule, HeaderComponent, HomeComponent, ArchiveComponent]
+  imports: [SidebarComponent, ViewComponent],
 })
 export class AppComponent {
-  selectedMenuItem: string = 'home';
+  view: string = 'home';
 }

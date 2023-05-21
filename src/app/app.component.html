@@ -1,13 +1,2 @@
-<div class="app-container">
-    <app-header (menuItemSelected)="selectedMenuItem = $event"></app-header>
-    <div class="app-body">
-        <div class="app-interactions">
-            <div *ngIf="selectedMenuItem === 'home'">
-                <app-home (menuItemSelected)="selectedMenuItem = $event"></app-home>
-            </div>
-            <div *ngIf="selectedMenuItem === 'archive'">
-                <app-archive></app-archive>
-            </div>
-        </div>
-    </div>
-</div>
+<app-sidebar (menuItemSelected)="view = $event"></app-sidebar>
+<app-view [view]="view"></app-view>
