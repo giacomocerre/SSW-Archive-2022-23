@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 
-.app-button-icon {
+.app-button {
   @include flexCenteredContainer;
   background: $ligh-secondary-color;
   border: $light-border-1;
@@ -9,7 +9,7 @@
   transition: $ease-in-out-sec03;
 }
 
-.app-button-icon:hover {
+.app-button:hover {
   background: $default-blue;
   border-color: $default-blue;
 }
