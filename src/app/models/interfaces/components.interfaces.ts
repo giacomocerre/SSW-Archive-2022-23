@@ -29,3 +29,8 @@ export interface MenuItem {
   label: string,
   action?: () => void;
 }
+
+export interface OpenerInterface {
+  title: string;
+  description: string;
+}
