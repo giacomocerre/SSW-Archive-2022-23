@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { IconComponent } from '../../atoms';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../atoms';
+import { MenuInterface } from '../../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, IconComponent]
 })
-export class MenuComponent {
+export class MenuComponent implements MenuInterface{
 
   @Output() menuItemSelected = new EventEmitter<string>();
 
@@ -18,19 +19,16 @@ export class MenuComponent {
       value: 'home',
       icon: {name:"home", color:'#f6f6f6'},
       label: 'Home',
-      hover: false,
     },
     {
       value: 'archive',
       icon: {name:"menu_book", color:'#f6f6f6'},
       label: 'Archivio',
-      hover: false,
     },
     {
       value: 'loan',
       icon: {name:"inventory", color:'#f6f6f6'},
       label: 'Prestiti',
-      hover: false,
     },
   ];
 

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IconInterface, WidgetInterface } from '../../../types/interfaces';
 import { IconComponent } from '../../atoms';
+import { WidgetInterface } from '../../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-widget',
@@ -10,9 +10,9 @@ import { IconComponent } from '../../atoms';
   imports: [IconComponent],
 })
 export class WidgetComponent implements WidgetInterface{
-  @Input() icon!: IconInterface;
-  @Input() total: number = 0;
-  @Input() measure: string = 'unit';
-  @Input() title: string = 'widget title';
-  @Input() classes: string = '';
+  @Input() icon;
+  @Input() total = 0;
+  @Input() measure = 'unit';
+  @Input() title = 'widget title';
+  @Input() classes = '';
 }
