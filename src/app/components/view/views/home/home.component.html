@@ -1,0 +1,51 @@
+<div class="app-view-opener">
+  <h1 class="app-title app-main-title">Home</h1>
+  <p class="app-description">
+    In questa area sono riassunti alcuni dati rilevanti per la gestione
+    dell'archvio bibliotecario.
+  </p>
+</div>
+<div class="app-dashboard-container">
+  <div class="app-widget-container">
+    <h3 class="app-dashboard-title">Dashboard</h3>
+    <app-widget
+      [icon]="{
+        name: 'auto_stories',
+        color: '#0B3C5D',
+        bgColor: '#99D3DF',
+        classes: 'app-icon-circle'
+      }"
+      [total]="totalBooks"
+      measure="Libri"
+      title="Totale libri in archivio"
+      classes="app-total-book-widget app-home-widget"
+      >Loading...</app-widget
+    >
+    <app-widget
+      [icon]="{
+        name: 'outgoing_mail',
+        color: '#025940',
+        bgColor: '#04BF8A',
+        classes: 'app-icon-circle'
+      }"
+      [total]="totalOnLoan"
+      measure="prestati"
+      title="Totale libri in prestito"
+      classes="app-onloan-book-widget app-home-widget"
+      >Loading...</app-widget
+    >
+  </div>
+  <div class="app-last-5">
+    <h3>I nuovi arrivi</h3>
+    <div *ngIf="recentBooks.length > 0; else emptyState">
+      <div *ngFor="let book of recentBooks">
+        <app-book-card [item]="book"></app-book-card>
+      </div>
+    </div>
+    <ng-template #emptyState>
+      <app-message
+        [message]="{ type: 'box', value: 'Non è presente nessun libro' }"
+      ></app-message>
+    </ng-template>
+  </div>
+</div>
