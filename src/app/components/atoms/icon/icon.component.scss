@@ -1,14 +1,13 @@
 @import "../../../styles/variables.scss";
 
 .app-icon-image {
-    position: relative;
-    top: 3px;
-    font-size: 30px;
-  }
-  
-  span.app-icon-circle {
-    @include flexCenteredContainer;
-    padding: 10px;
-    border-radius: 100%;
-  }
-  
+  position: relative;
+  top: 3px;
+  font-size: 30px;
+}
+
+span.app-icon-circle {
+  @include flexCenteredContainer;
+  padding: 10px;
+  border-radius: 100%;
+}

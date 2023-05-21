@@ -1,14 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IconInterface } from '../../../types/interfaces';
-
-const DEFAULT_ICON: IconInterface = {
-  name: 'home',
-  classes: '',
-  width: 35,
-  height: 35,
-  color: 'red',
-  bgColor: 'none'
-}
+import { IconInterface } from '../../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-icon',
@@ -17,5 +8,5 @@ const DEFAULT_ICON: IconInterface = {
   standalone: true,
 })
 export class IconComponent {
-  @Input() icon: IconInterface = DEFAULT_ICON;
+  @Input() icon: IconInterface;
 }
