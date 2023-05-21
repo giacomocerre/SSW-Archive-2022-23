@@ -1,8 +1,8 @@
-<h1 class="app-title app-archive-title">Archive</h1>
-<p class="app-description">
-  In questa area sono riassunti alcuni dati rilevanti per la gestione
-  dell'archvio bibliotecario.
-</p>
+<app-opener
+  title="Archive"
+  description="In questa area è possibile gestire e vedere i contenuti dell'archvio."
+></app-opener>
 <app-button (onClick)="saveBook()" label="add"></app-button>
-
 <app-input (onChange)="searchBooks($event)"></app-input>
+<p>Totale libri: {{books.length}}</p>
+<app-archive-viewer [items]="books" [pagination]="{active: true, items: 3}" ></app-archive-viewer>
