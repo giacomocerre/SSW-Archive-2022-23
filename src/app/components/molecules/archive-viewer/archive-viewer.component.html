@@ -1,0 +1,29 @@
+<div class="app-archive-viewer">
+    <ng-container *ngIf="currentView === 'box'; else listView">
+      <ng-container *ngTemplateOutlet="boxView"></ng-container>
+    </ng-container>
+  
+    <ng-template #boxView>
+      <div class="app-archive-view" *ngFor="let item of paginatedItems">
+        <app-book-card [item]="item"></app-book-card>
+      </div>
+    </ng-template>
+  
+    <ng-template #listView>
+      <div class="app-archive-view">
+        <ul>
+          <li *ngFor="let item of paginatedItems">{{ item.title }}</li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+  <div class="pagination">
+    <app-button
+      *ngFor="let pageNumber of pageNumbers"
+      (onClick)="goToPage(pageNumber)"
+      [label]="pageNumber.toString()"
+      [classes]="pageNumber === currentPage ? 'app-active-button' : ''"
+    >
+    </app-button>
+  </div>
+  

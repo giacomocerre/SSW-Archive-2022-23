@@ -1,0 +1,16 @@
+.app-archive-viewer,
+.pagination {
+    overflow: hidden;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination app-button {
+    float: left;
+    margin-left:10px;
+}
