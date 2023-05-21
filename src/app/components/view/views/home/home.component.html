@@ -1,10 +1,11 @@
 <div class="app-view-opener">
-  <h1 class="app-title app-main-title">Home</h1>
-  <p class="app-description">
-    In questa area sono riassunti alcuni dati rilevanti per la gestione
-    dell'archvio bibliotecario.
-  </p>
+  <app-opener
+    title="Home"
+    desription="  In questa area sono riassunti alcuni dati rilevanti per la gestione
+    dell'archvio bibliotecario."
+  ></app-opener>
 </div>
+<!-- WIDGESTS -->
 <div class="app-dashboard-container">
   <div class="app-widget-container">
     <h3 class="app-dashboard-title">Dashboard</h3>
@@ -35,6 +36,7 @@
       >Loading...</app-widget
     >
   </div>
+  <!-- LAST 5 BOOKS -->
   <div class="app-last-5">
     <h3>I nuovi arrivi</h3>
     <div *ngIf="recentBooks.length > 0; else emptyState">
