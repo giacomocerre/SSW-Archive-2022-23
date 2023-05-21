@@ -1,0 +1,18 @@
+<!-- Template per il tipo "error" -->
+<ng-template #errorTemplate>
+    <div class="error-message">
+      <p>{{ message.value }}</p>
+    </div>
+  </ng-template>
+  
+  <!-- Template per il tipo "box" -->
+  <ng-template #boxTemplate>
+    <div class="box-message">
+      <p>{{ message.value }}</p>
+    </div>
+  </ng-template>
+  
+  <!-- Selettore del template in base al tipo -->
+  <ng-container *ngIf="message.type === 'error'; else boxTemplate">
+    <ng-container *ngTemplateOutlet="errorTemplate"></ng-container>
+  </ng-container>
