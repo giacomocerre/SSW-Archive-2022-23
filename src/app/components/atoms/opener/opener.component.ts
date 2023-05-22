@@ -8,6 +8,6 @@ import { OpenerInterface } from '../../../models/interfaces/components.interface
   standalone: true,
 })
 export class OpenerComponent implements OpenerInterface{
-  @Input() title = 'Titolo di prova';
-  @Input() description = 'Descrizione di prova';
+  @Input() title = 'Titolo di default';
+  @Input() description = 'Descrizione di default';
 }
