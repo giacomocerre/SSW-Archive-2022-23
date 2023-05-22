@@ -39,15 +39,6 @@
   <!-- LAST 5 BOOKS -->
   <div class="app-last-5">
     <h3>I nuovi arrivi</h3>
-    <div *ngIf="recentBooks.length > 0; else emptyState">
-      <div *ngFor="let book of recentBooks">
-        <app-book-card [item]="book"></app-book-card>
-      </div>
-    </div>
-    <ng-template #emptyState>
-      <app-message
-        [message]="{ type: 'box', value: 'Non è presente nessun libro' }"
-      ></app-message>
-    </ng-template>
+    <app-archive-viewer [items]="recentBooks"></app-archive-viewer>
   </div>
 </div>
