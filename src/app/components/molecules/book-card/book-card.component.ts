@@ -13,7 +13,7 @@ import { Book } from '../../../models/classes';
 })
 export class BookCardComponent {
   @Input() item: Book;
-  showOptionsMenu:boolean = false;
+  showOptionsMenu:boolean = false; // valore booleano per mostrare le opzioni possibili.
 
   handleOptionSelected(item: string) {
     console.log(item)
