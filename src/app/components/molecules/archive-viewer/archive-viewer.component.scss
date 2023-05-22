@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .app-archive-viewer,
 .pagination {
     overflow: hidden;
@@ -8,9 +10,30 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    position: relative;
 }
 
 .pagination app-button {
     float: left;
     margin-left:10px;
+}
+
+.app-archive-viewer {
+    padding: 10px;
+    border: 1px solid #cccc;
+    border-radius: 10px;
+    background: #eee;
+}
+
+p.app-archive-viewer-total {
+    position: absolute;
+    left: 0;
+}
+
+span.app-archive-viewer-total-value {
+    padding: 20px;
+    font-weight: 900;
+    margin-left: 10px;
+    background: $dark-main-color;
+    color: $light-main-color;
 }
