@@ -40,7 +40,7 @@ export class OptionsMenuComponent implements MenuInterface {
         size: 20,
       },
       action: () => {
-        this.archiveService.removeBookToArchive(this.id);
+        this.archiveService.removeBookFromArchive(this.id);
       },
     },
   ];
