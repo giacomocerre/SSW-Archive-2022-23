@@ -59,7 +59,7 @@ export class Book {
    */
   getLoanStatus(): StatusInterface {
     if (this.onLoan && this.user) {
-      return { value: false, message: `In prestito a: ${this.user.name} ${this.user.surname} dal ${this.getFormattedDate()}` };
+      return { value: false, message: `In prestito a: ${this.user.name} ${this.user.surname}` };
     } else {
       return { value: true, message: "Disponibile" };
     }

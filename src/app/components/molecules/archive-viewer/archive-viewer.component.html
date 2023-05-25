@@ -1,37 +1,26 @@
 <div class="app-archive-viewer" *ngIf="items.length > 0; else emptyState">
-    <ng-container *ngIf="currentView === 'box'; else listView">
-      <ng-container *ngTemplateOutlet="boxView"></ng-container>
-    </ng-container>
+  <div class="app-archive-view" *ngFor="let item of paginatedItems">
+    <app-book-card (selectedOption)="showSingleBookView($event)" [item]="item"></app-book-card>
+    <app-single-book-viewer *ngIf="singleBookOptions" [item]="item" [options]="singleBookOptions"></app-single-book-viewer>
   </div>
-  <div class="pagination" *ngIf="pagination.active">
-    <p class="app-archive-viewer-total">Risultati: <span class="app-archive-viewer-total-value">{{items.length}}</span></p>
+</div>
+<div class="pagination" *ngIf="pagination.active">
+  <p class="app-archive-viewer-total">
+    Risultati:
+    <span class="app-archive-viewer-total-value">{{ items.length }}</span>
+  </p>
 
-    <app-button
-      *ngFor="let pageNumber of pageNumbers"
-      (onClick)="goToPage(pageNumber)"
-      [label]="pageNumber.toString()"
-      [classes]="pageNumber === currentPage ? 'app-active-button' : ''"
-    >
-    </app-button>
-  </div>
+  <app-button
+    *ngFor="let pageNumber of pageNumbers"
+    (onClick)="goToPage(pageNumber)"
+    [label]="pageNumber.toString()"
+    [classes]="pageNumber === currentPage ? 'app-active-button' : ''"
+  >
+  </app-button>
+</div>
 
-  <ng-template #boxView>
-    <div class="app-archive-view" *ngFor="let item of paginatedItems">
-      <app-book-card [item]="item"></app-book-card>
-    </div>
-  </ng-template>
-
-  <ng-template #listView>
-    <div class="app-archive-view">
-      <ul>
-        <li *ngFor="let item of paginatedItems">{{ item.title }}</li>
-      </ul>
-    </div>
-  </ng-template>
-
-  <ng-template #emptyState>
-    <app-message
-      [message]="{ type: 'box', value: 'Nessun libro trovato in archivio' }"
-    ></app-message>
-  </ng-template>
-  
+<ng-template #emptyState>
+  <app-message
+    [message]="{ type: 'box', value: 'Nessun libro trovato in archivio' }"
+  ></app-message>
+</ng-template>

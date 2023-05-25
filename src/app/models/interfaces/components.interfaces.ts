@@ -27,10 +27,16 @@ export interface MenuItem {
   value: string;
   icon: IconInterface;
   label: string,
+  isActive?: boolean; 
   action?: () => void;
 }
 
 export interface OpenerInterface {
   title: string;
   description: string;
+}
+
+export interface SingleBookViewInterface {
+  type: string;
+  id: string;
 }

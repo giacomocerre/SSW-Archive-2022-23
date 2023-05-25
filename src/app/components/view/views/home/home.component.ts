@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MessageComponent, OpenerComponent } from '../../../../components/atoms';
-import { ArchiveViewerComponent, BookCardComponent, WidgetComponent } from '../../../../components/molecules';
+import { ArchiveViewerComponent, WidgetComponent } from '../../../../components/molecules';
 import { ArchiveService } from '../../../../services/archive.service';
 import { Book } from '../../../../models/classes';
 import { HttpClientModule } from '@angular/common/http';

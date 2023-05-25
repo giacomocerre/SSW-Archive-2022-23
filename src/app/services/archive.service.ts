@@ -13,15 +13,12 @@ export class ArchiveService {
   private apiKey = 'd6f7e1fe'; // Chiave API per l'autenticazione
 
   // BehaviorSubject per condividere l'istanza di Archive
-  private archiveSubject = new BehaviorSubject<Archive>(new Archive());
-
-  // Observable per sottoscriversi agli aggiornamenti dell'istanza di Archive
-  public archive$: Observable<Archive> = this.archiveSubject.asObservable();
+  public archive$ = new BehaviorSubject<Archive>(new Archive());6
 
   constructor(private http: HttpClient) {
-    // Recupera i dati iniziali dell'Archive dall'API e inizializza il BehaviorSubject
-    this.fetchArchiveData().subscribe((archive) => {
-      this.archiveSubject.next(archive);
+    // Recupera i dati iniziali dell'Archive dall'API e inizializza il BehaviorSubject archive$
+    this.fetchArchiveData$().subscribe((archive) => {
+      this.archive$.next(archive);
     });
   }
 
@@ -29,7 +26,7 @@ export class ArchiveService {
    * Recupera i dati dell'Archive dall'API.
    * @returns Un Observable che emette un'istanza di Archive.
    */
-  private fetchArchiveData(): Observable<Archive> {
+  private fetchArchiveData$(): Observable<Archive> {
     return this.http.get<string>(`${this.baseUrl}/get?key=${this.apiKey}`).pipe(
       map((response) => {
         const { books } = JSON.parse(response) || {};
@@ -61,12 +58,12 @@ export class ArchiveService {
    * @param body Il corpo della richiesta di aggiornamento.
    * @returns Un Observable che emette la risposta dell'API.
    */
-  private updateArchive(body: Archive): Observable<any> {
+  private updateArchive$(body: Archive): Observable<any> {
     return this.http
       .post<any>(`${this.baseUrl}/set?key=${this.apiKey}`, JSON.stringify(body))
       .pipe(
         map((response) => {
-          this.archiveSubject.next(body);
+          this.archive$.next(body);
           return response;
         })
       );
@@ -77,9 +74,9 @@ export class ArchiveService {
    * @param book Il libro da aggiungere.
    */
   addBookToArchive(book: Book): void {
-    const archive = this.archiveSubject.getValue(); // Ottieni l'istanza corrente di Archive
+    const archive = this.archive$.getValue(); // Ottieni l'istanza corrente di Archive
     archive.addBook(book); // Aggiungi il libro all'istanza di Archive
-    this.updateArchive(archive).subscribe();
+    this.updateArchive$(archive).subscribe();
   }
 
   /**
@@ -87,15 +84,15 @@ export class ArchiveService {
    * @param id L'ID del libro da rimuovere.
    */
   removeBookFromArchive(id: string): void {
-    const archive = this.archiveSubject.getValue(); // Ottieni l'istanza corrente di Archive
+    const archive = this.archive$.getValue(); // Ottieni l'istanza corrente di Archive
     archive.removeBook(id); // Rimuove il libro dall'istanza di Archive
-    this.updateArchive(archive).subscribe();
+    this.updateArchive$(archive).subscribe();
   }
 
   /**
    * Resetta Archive.
    */
   resetArchive(): void {
-    this.updateArchive(new Archive()).subscribe();
+    this.updateArchive$(new Archive()).subscribe();
   }
 }

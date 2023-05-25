@@ -1,0 +1,11 @@
+<div class="app-sigle-book-view">
+  <ng-container *ngIf="options.type === 'loan' ? loanTemplate : singleTemplate"></ng-container>
+</div>
+
+<ng-template #loanTemplate>
+    <p>Loan</p>
+  </ng-template>
+
+  <ng-template #singleTemplate>
+    <p>Single</p>
+  </ng-template>

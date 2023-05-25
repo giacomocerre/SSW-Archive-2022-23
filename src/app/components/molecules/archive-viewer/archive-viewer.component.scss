@@ -6,9 +6,7 @@
 }
 
 .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenteredContainer;
     margin-top: 20px;
     position: relative;
 }
@@ -20,9 +18,9 @@
 
 .app-archive-viewer {
     padding: 10px;
-    border: 1px solid #cccc;
+    border: $light-border-1;
     border-radius: 10px;
-    background: #eee;
+    background: $light-gray-color2;
 }
 
 p.app-archive-viewer-total {

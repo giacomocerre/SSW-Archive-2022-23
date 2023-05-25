@@ -6,3 +6,5 @@
       </li>
     </ul>
   </div>
+  <app-message *ngIf="message.status" [message]="{type:'error', value:message.message }"></app-message>
+

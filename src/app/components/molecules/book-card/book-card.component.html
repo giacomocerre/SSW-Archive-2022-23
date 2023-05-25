@@ -32,4 +32,4 @@
   </div>
 </div>
 
-<app-options-menu *ngIf="showOptionsMenu" (selectedOption)="handleOptionSelected($event)" [id]="item.id"></app-options-menu>
+<app-options-menu *ngIf="showOptionsMenu" (selectedOption)="selectedOption.emit($event)" [id]="item.id" [loan]="item.onLoan"></app-options-menu>

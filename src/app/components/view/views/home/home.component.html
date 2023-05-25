@@ -1,11 +1,11 @@
 <div class="app-view-opener">
   <app-opener
     title="Home"
-    desription="  In questa area sono riassunti alcuni dati rilevanti per la gestione
+    description="  In questa area sono riassunti alcuni dati rilevanti per la gestione
     dell'archvio bibliotecario."
   ></app-opener>
 </div>
-<!-- WIDGESTS -->
+<!-- WIDGETS -->
 <div class="app-dashboard-container">
   <div class="app-widget-container">
     <h3 class="app-dashboard-title">Dashboard</h3>
@@ -25,8 +25,8 @@
     <app-widget
       [icon]="{
         name: 'outgoing_mail',
-        color: '#025940',
-        bgColor: '#04BF8A',
+        color: '#590202',
+        bgColor: '#FF5A23',
         classes: 'app-icon-circle'
       }"
       [total]="totalOnLoan"
@@ -35,8 +35,21 @@
       classes="app-onloan-book-widget app-home-widget"
       >Loading...</app-widget
     >
+    <app-widget
+    [icon]="{
+      name: 'done_all',
+      color: '#608040',
+      bgColor: '#A6DE4B',
+      classes: 'app-icon-circle'
+    }"
+    [total]="totalBooks-totalOnLoan"
+    measure="disponibili"
+    title="Totale libri disponibili"
+    classes="app-onloan-book-widget app-home-widget"
+    >Loading...</app-widget
+  >
   </div>
-  <!-- LAST 5 BOOKS -->
+  <!-- LAST BOOKS -->
   <div class="app-last-5">
     <h3>I nuovi arrivi</h3>
     <app-archive-viewer [items]="recentBooks"></app-archive-viewer>

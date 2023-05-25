@@ -1,2 +1,2 @@
 <app-sidebar (menuItemSelected)="view = $event"></app-sidebar>
-<app-view [view]="view"></app-view>
+<app-view (changeView)="view = $event" [view]="view"></app-view>

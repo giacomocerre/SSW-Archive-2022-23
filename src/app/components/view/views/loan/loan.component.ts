@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { OpenerComponent } from 'src/app/components/atoms';
 
 @Component({
@@ -8,4 +8,6 @@ import { OpenerComponent } from 'src/app/components/atoms';
   standalone: true,
   imports: [OpenerComponent]
 })
-export class LoanComponent {}
+export class LoanComponent {
+  @Output() changeView: EventEmitter<string> = new EventEmitter<string>();
+}

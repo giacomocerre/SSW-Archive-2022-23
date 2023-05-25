@@ -1,20 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { IconComponent } from '../../atoms';
+import { IconComponent, MessageComponent } from '../../atoms';
 import { ArchiveService } from '../../../services/archive.service';
-import { MenuInterface } from '../../../models/interfaces/components.interfaces';
+import { MenuInterface, MenuItem } from '../../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-options-menu',
   templateUrl: './options-menu.component.html',
   styleUrls: ['./options-menu.component.scss'],
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [CommonModule, IconComponent, MessageComponent],
 })
 export class OptionsMenuComponent implements MenuInterface {
   @Input() visible: boolean = false;
   @Input() id: string;
-  @Output() selectedOption = new EventEmitter<string>();
+  @Input() loan: boolean = true;
+  @Output() selectedOption = new EventEmitter<{type:string, id:string}>();
+  message: {status:boolean, message:string} = {status: false, message:''};
 
   constructor(private archiveService: ArchiveService) {}
 
@@ -28,7 +30,19 @@ export class OptionsMenuComponent implements MenuInterface {
         size: 20,
       },
       action: () => {
-        this.selectedOption.emit('single');
+        this.selectedOption.emit({type:'single', id: this.id});
+      },
+    },
+    {
+      label: 'Gestisci Prestito',
+      value: 'loan',
+      icon: {
+        name: 'autorenew',
+        color: '222',
+        size: 20,
+      },
+      action: () => {
+        this.selectedOption.emit({type:'loan', id:this.id});
       },
     },
     {
@@ -39,13 +53,22 @@ export class OptionsMenuComponent implements MenuInterface {
         color: 'red',
         size: 20,
       },
+      isActive: !this.loan,
       action: () => {
-        this.archiveService.removeBookFromArchive(this.id);
+        this.loan ? this.showMessage('Impossibile Eliminare (Libro in prestito)') : this.archiveService.removeBookFromArchive(this.id);
       },
     },
   ];
 
-  handlerOption(item: any) {
+  showMessage(input: string) {
+    this.message.message = input;
+    this.message.status = true;
+    setInterval(() => {
+      this.message = {status: false, message:''}
+    }, 5000)
+  }
+
+  handlerOption(item: MenuItem) {
     item.action();
   }
 }

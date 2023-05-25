@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ArchiveComponent, HomeComponent, LoanComponent } from './views';
 import { CommonModule } from '@angular/common';
 
@@ -11,4 +11,5 @@ import { CommonModule } from '@angular/common';
 })
 export class ViewComponent {
   @Input() view: string;
+  @Output() changeView: EventEmitter<string> = new EventEmitter<string>();
 }

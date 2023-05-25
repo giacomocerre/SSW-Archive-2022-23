@@ -28,6 +28,14 @@ nav {
   li:hover {
     background-color: $light-blue;
   }
+
+  .option-active {
+    background-color: $light-blue;
+  }
+
+  .option-active .tooltip {
+    opacity: 1;
+  }
   
   span.tooltip {
     position: absolute;
