@@ -1,8 +1,0 @@
-<app-opener
-  title="Archive"
-  description="In questa area è possibile gestire e vedere i contenuti dell'archvio."
-></app-opener>
-<app-button (onClick)="saveBook()" label="add"></app-button>
-<app-input placeHolder="cerca nell'archivio" (onChange)="searchBooks($event)"></app-input>
-<app-archive-viewer [items]="books" [pagination]="{active: true, items: 4}" ></app-archive-viewer>
-
