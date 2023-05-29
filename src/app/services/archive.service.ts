@@ -13,7 +13,7 @@ export class ArchiveService {
   private apiKey = 'd6f7e1fe'; // Chiave API per l'autenticazione
 
   // BehaviorSubject per condividere l'istanza di Archive
-  public archive$ = new BehaviorSubject<Archive>(new Archive());6
+  public archive$ = new BehaviorSubject<Archive>(new Archive());
 
   constructor(private http: HttpClient) {
     // Recupera i dati iniziali dell'Archive dall'API e inizializza il BehaviorSubject archive$

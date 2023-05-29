@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+.app-button {
+    border: $light-border-1;
+    background: $light-main-color;
+    border-radius: 5px;
+    cursor: pointer;
+    @include flexCenteredContainer;
+    transition: $ease-in-out-sec02;
+}
+
+.app-button:hover {
+    background: $default-blue;
+    border: $blue-border-1;
+}
+
+.app-save-book-button {
+    padding: 10px 30px;
+}

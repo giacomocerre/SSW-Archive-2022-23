@@ -1,0 +1,4 @@
+<div class="app-message" [style.background]="message.color">
+  <p>{{ message.value }}</p>
+  <app-icon [icon]="message.type === 'error' ? {name:'error', size:20} : {name:'done_all', size:20}"></app-icon>
+</div>

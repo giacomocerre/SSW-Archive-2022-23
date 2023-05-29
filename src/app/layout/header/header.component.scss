@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.app-header {
+    overflow: hidden;
+    height: 150px;
+    @include flexCenteredContainer;
+    background: $light-main-color;
+    border-bottom: 1px solid #eee;
+}
+
+.app-add-button-container {
+    margin-left: 20px;
+}

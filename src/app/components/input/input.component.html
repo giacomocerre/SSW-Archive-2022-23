@@ -1,0 +1,11 @@
+<div class="input-container">
+  <input
+    [placeholder]="placeholder"
+    class="app-text-input"
+    type="text"
+    #textInput
+    (input)="onChange.emit(textInput.value)"
+  />
+  <app-icon [icon]="icon"></app-icon>
+  <app-icon ngIf="isRequired" [icon]="{name:'emergency', size:10, color:'red', classes:'app-required-icon'}"></app-icon>
+</div>

@@ -1,0 +1,40 @@
+<div class="app-pop-up">
+  <div class="add-form">
+    <h2>
+      Aggiugni Libro
+      <app-icon
+        [icon]="{ name: 'close', classes: 'clickable' }"
+        (click)="close.emit(false)"
+      ></app-icon>
+    </h2>
+    <p>Compila tutti i campi.</p>
+    <div class="app-add-input-form">
+      <app-input
+        placeholder="Posizione in Archvio"
+        [isRequired]="true"
+        [icon]="{ name: 'my_location', size: 20 }"
+        (onChange)="archivePosition = $event"
+      ></app-input>
+      <app-input
+        placeholder="Titolo del libro"
+        [isRequired]="true"
+        [icon]="{ name: 'title', size: 20 }"
+        (onChange)="title = $event"
+      ></app-input>
+      <app-input
+        placeholder="Autore del libro"
+        [isRequired]="true"
+        [icon]="{ name: 'person', size: 20 }"
+        (onChange)="author = $event"
+      ></app-input>
+
+      <app-button
+        (click)="saveBook()"
+        [label]="{ icon: false, value: 'Salva' }"
+        classes="app-save-book-button"
+      ></app-button>
+    </div>
+    <app-message *ngIf="error" [message]="{type:'error', value:'Errore: controlla tutti i campi', color:'#ff5f5d' }"></app-message>
+    <app-message *ngIf="success" [message]="{type:'success', value:'Libro salvato correttamente', color:'lightgreen' }"></app-message>
+  </div>
+</div>

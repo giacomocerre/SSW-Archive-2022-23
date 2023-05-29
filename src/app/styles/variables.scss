@@ -62,21 +62,22 @@ $red-border-3: 3px solid #ff5f5d;
 $red-border-4: 4px solid #ff5f5d;
 $red-border-5: 5px solid #ff5f5d;
 
+// >> Borders Blue
+// >> Borders red
+$blue-border-1: 1px solid lightblue;
+$blue-border-2: 2px solid lightblue;
+$blue-border-3: 3px solid lightblue;
+$blue-border-4: 4px solid lightblue;
+$blue-border-5: 5px solid lightblue;
+
 //*********************************************//
 
 //************************* MIXIN ***************************************//
 
-// Generaliziations
-$flex-centered-container: (
-  display: flex,
-  align-items: center,
-  justify-content: center,
-);
-
 @mixin flexCenteredContainer {
-  display: map-get($flex-centered-container, display);
-  align-items: map-get($flex-centered-container, align-items);
-  justify-content: map-get($flex-centered-container, justify-content);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 //***********************************************************************//

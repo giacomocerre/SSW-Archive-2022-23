@@ -1,0 +1,25 @@
+<div class="app-view">
+  <div class="app-widgets">
+    <app-widget
+      [widget]="{
+        total: totalBooks,
+        value: 'Libri totali',
+        icon: { name: 'auto_stories' }
+      }"
+    ></app-widget>
+    <app-widget
+      [widget]="{
+        total: totalOnLoan,
+        value: 'Libri in Prestito',
+        icon: { name: 'outgoing_mail' }
+      }"
+    ></app-widget>
+    <app-widget
+      [widget]="{
+        total: totalAvailable,
+        value: 'Libri Disponibili',
+        icon: { name: 'check_circle' }
+      }"
+    ></app-widget>
+  </div>
+</div>

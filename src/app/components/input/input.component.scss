@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+
+.input-container {
+  padding: 10px;
+  border: $light-border-1;
+  border-radius: 20px;
+  margin: 20px 0px;
+  width: fit-content;
+  background: $ligh-secondary-color;
+  display: flex;
+  align-items: center;
+}
+
+.input-container:focus-within {
+    border: $dark-border-2;
+    background: $light-main-color;
+  }
+
+.app-text-input {
+  border: none;
+}
+
+.app-text-input:focus {
+  border: none;
+  outline: none;
+  background: $light-main-color;
+}

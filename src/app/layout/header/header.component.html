@@ -1,0 +1,12 @@
+<div class="app-header">
+  <h1 class="app-main-title">{{ title }}</h1>
+  <div class="app-add-button-container">
+    <app-button
+      (click)="toggleAdd = !toggleAdd"
+      classes="app-add-button"
+      [label]="{ icon: true, value: 'Aggiungi Libro' }"
+      [icon]="{ name: 'add', size: 20 }"
+    ></app-button>
+  </div>
+</div>
+<app-add-form *ngIf="toggleAdd" (close)="toggleAdd = $event"></app-add-form>
