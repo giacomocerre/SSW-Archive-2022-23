@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
-import { WidgetInterface } from 'src/app/models/interfaces/components.interfaces';
+import { WidgetInterface } from '../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-widget',

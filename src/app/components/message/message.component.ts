@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
-import { MessageInterface } from 'src/app/models/interfaces/components.interfaces';
+import { MessageInterface } from '../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-message',
