@@ -8,6 +8,7 @@ import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { MessageComponent } from '../message/message.component';
+import { ActionStatusInterface } from 'src/app/models/interfaces/classes.interfaces';
 
 @Component({
   selector: 'app-add-form',
@@ -28,27 +29,20 @@ export class AddFormComponent {
   archivePosition: string;
   title: string;
   author: string;
-  error: boolean = false;
-  success: boolean = false;
+  message: ActionStatusInterface;
 
   constructor(private archiveService: ArchiveService) {}
 
   saveBook() {
-    if (this.archivePosition && this.title && this.author) {
-      this.archiveService.addBookToArchive(
-        new Book(
-          uuidv4(),
-          this.archivePosition,
-          this.title,
-          this.author,
-          new Date(),
-          false
-        )
-      );
-      this.error = false;
-      this.success = true;
-    } else {
-      this.error = true;
-    }
+    this.message = this.archiveService.addBookToArchive(
+      new Book(
+        uuidv4(),
+        this.archivePosition,
+        this.title,
+        this.author,
+        new Date(),
+        false
+      )
+    );
   }
 }

@@ -21,14 +21,13 @@ export class Archive {
    */
   addBook(book: Book) {
     this.books.push(book);
-  }
+  } 
 
   /**
    * Rimuove un libro dall'archivio.
    * @param id ID del libro da rimuovere.
    */
   removeBook(id: string) {
-    console.log(id)
     this.books = this.books.filter((book) => book.id !== id);
   }
 

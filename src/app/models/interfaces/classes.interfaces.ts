@@ -13,3 +13,8 @@ export interface StatusInterface {
   value: boolean;
   message: string;
 }
+
+export interface ActionStatusInterface {
+  status: number;
+  message: string;
+}

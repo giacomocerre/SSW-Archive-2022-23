@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { WidgetComponent } from '../../components';
 import { ArchiveService } from '../../services/archive.service';
+import { ArchiveViewComponent } from '../archive-view/archive-view.component';
 
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.scss'],
   standalone: true,
-  imports: [WidgetComponent],
+  imports: [WidgetComponent, ArchiveViewComponent],
 })
 export class ViewComponent implements OnInit {
   totalBooks: number = 0;
@@ -23,4 +24,5 @@ export class ViewComponent implements OnInit {
       this.totalAvailable = archive.getBooksAvailable().length;
     });
   }
+
 }

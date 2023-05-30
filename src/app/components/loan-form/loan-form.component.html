@@ -1,0 +1,33 @@
+<div class="app-pop-up">
+  <div class="add-form">
+    <h2>
+      Form per il prestito
+      <app-icon
+        [icon]="{ name: 'close', classes: 'clickable' }"
+        (click)="closeLoan.emit(false)"
+      ></app-icon>
+    </h2>
+    <p>Inserisci i dati di chi prende il libro</p>
+    <div class="app-loan-container">
+      <div class="app-add-input-form">
+        <app-input
+          [isRequired]="true"
+          placeholder="Nome"
+          [icon]="{ name: 'person', size: 20 }"
+          (onChange)="name = $event"
+        ></app-input>
+        <app-input
+          [isRequired]="true"
+          placeholder="Cognome"
+          [icon]="{ name: 'person', size: 20 }"
+          (onChange)="surname = $event"
+        ></app-input>
+        <app-button
+          (click)="save()"
+          [label]="{ icon: false, value: 'Salva' }"
+        ></app-button>
+      </div>
+    </div>
+    <app-message *ngIf="message" [message]="{type: message.status == 200 ? 'success' : 'error', value: message.message, color:message.status == 200 ? 'lightgreen' :'#ff5f5d' }"></app-message>
+  </div>
+</div>

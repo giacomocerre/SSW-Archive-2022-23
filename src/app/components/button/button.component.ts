@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
+import { IconInterface, LabelInterface } from '../../models/interfaces/components.interfaces';
 import { CommonModule } from '@angular/common';
-import { ButtonInterface, LabelInterface } from '../../models/interfaces/components.interfaces';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   standalone: true,
-  imports:[CommonModule, IconComponent]
+  imports: [CommonModule, IconComponent],
 })
 export class ButtonComponent {
   @Input() label: LabelInterface;
   @Input() classes: string;
-  @Input() icon;
+  @Input() icon: IconInterface;
   @Output() click = new EventEmitter();
 }

@@ -34,7 +34,6 @@
         classes="app-save-book-button"
       ></app-button>
     </div>
-    <app-message *ngIf="error" [message]="{type:'error', value:'Errore: controlla tutti i campi', color:'#ff5f5d' }"></app-message>
-    <app-message *ngIf="success" [message]="{type:'success', value:'Libro salvato correttamente', color:'lightgreen' }"></app-message>
+    <app-message *ngIf="message" [message]="{type: message.status == 200 ? 'success' : 'error', value: message.message, color:message.status == 200 ? 'lightgreen' :'#ff5f5d' }"></app-message>
   </div>
 </div>

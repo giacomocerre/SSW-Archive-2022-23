@@ -1,0 +1,52 @@
+<div class="app-archive">
+  <table>
+    <thead>
+      <tr>
+        <th>Aggiunto in data</th>
+        <th>Posizione</th>
+        <th>Titolo</th>
+        <th>Autore</th>
+        <th>Disponibilità</th>
+        <th>Noleggiato a</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.getFormattedDate() }}</td>
+        <td>{{ book.archivePosition }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>
+          <app-icon
+            [icon]="{
+              name: book.onLoan ? 'cancel' : 'check_circle',
+              size: 20,
+              color: book.onLoan ? 'red' : 'green'
+            }"
+          ></app-icon>
+        </td>
+        <td>{{ book.user ? book.user.name + " " + book.user.surname : "" }}</td>
+        <td class="extra-action-td">
+          <app-button
+            classes="app-archive-item-interaction"
+            (click)="viewLoan(book.id, book.onLoan)"
+            [label]="{ icon: true, value: '' }"
+            [icon]="{
+              name: book.onLoan ? 'assignment_return' : 'content_paste_go',
+              size: 22
+            }"
+          ></app-button>
+          <app-button
+            *ngIf="!book.onLoan"
+            classes="app-archive-item-interaction"
+            (click)="removeBook(book.id)"
+            [label]="{ icon: true, value: '' }"
+            [icon]="{ name: 'delete', size: 22 }"
+          ></app-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-loan-form *ngIf="showLoan" (closeLoan)="showLoan=$event" [id]="selectedID"></app-loan-form>
+</div>
