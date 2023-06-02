@@ -11,7 +11,7 @@ import { ArchiveComponent } from '../../components';
   templateUrl: './archive-view.component.html',
   styleUrls: ['./archive-view.component.scss'],
   standalone: true,
-  imports: [CommonModule, InputComponent, ArchiveComponent],
+  imports: [CommonModule, HttpClientModule, InputComponent, ArchiveComponent],
 })
 export class ArchiveViewComponent implements OnInit {
   books: Book[];
@@ -20,7 +20,7 @@ export class ArchiveViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.archiveService.archive$.subscribe((archive) => {
-      this.books = archive.getBooks();
+      this.books = archive.getBooks();      
     });
   }
 
