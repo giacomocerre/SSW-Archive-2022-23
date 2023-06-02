@@ -8,7 +8,9 @@
       ></app-icon>
     </h2>
     <p>Inserisci i dati di chi prende il libro:</p>
-    <p class="app-selected-book">{{book.archivePosition}} | {{book.title}} - {{book.author}}</p>
+    <p class="app-selected-book">
+      {{ book.archivePosition }} | {{ book.title }} - {{ book.author }}
+    </p>
     <div class="app-loan-container">
       <div class="app-add-input-form">
         <app-input
@@ -30,6 +32,13 @@
         ></app-button>
       </div>
     </div>
-    <app-message *ngIf="message" [message]="{type: message.status == 200 ? 'success' : 'error', value: message.message, color:message.status == 200 ? 'lightgreen' :'#ff5f5d' }"></app-message>
+    <app-message
+      *ngIf="message"
+      [message]="{
+        type: message.status == 200 ? 'success' : 'error',
+        value: message.message,
+        color: message.status == 200 ? 'lightgreen' : '#ff5f5d'
+      }"
+    ></app-message>
   </div>
 </div>

@@ -16,7 +16,7 @@ import { ArchiveService } from '../../services/archive.service';
 export class ArchiveComponent {
   @Input() books: Book[];
   @Input() bookToShow: number; //Numero massimo di libri da visualizzare.
-  showLoan: boolean = false; // Flag per mostrare o nascondere il modulo di prestito.
+  showLoan = false; // Flag per mostrare o nascondere il modulo di prestito.
   selectedID: string;
 
   constructor(private archiveService: ArchiveService){}
