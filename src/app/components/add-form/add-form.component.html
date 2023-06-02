@@ -34,6 +34,14 @@
         classes="app-save-book-button"
       ></app-button>
     </div>
-    <app-message *ngIf="message" [message]="{type: message.status == 200 ? 'success' : 'error', value: message.message, color:message.status == 200 ? 'lightgreen' :'#ff5f5d' }"></app-message>
+    
+    <app-message
+      *ngIf="message"
+      [message]="{
+        type: message.status == 200 ? 'success' : 'error',
+        value: message.message,
+        color: message.status == 200 ? 'lightgreen' : '#ff5f5d'
+      }"
+    ></app-message>
   </div>
 </div>
