@@ -11,9 +11,7 @@ import { ArchiveViewComponent } from '../archive-view/archive-view.component';
   imports: [WidgetComponent, ArchiveViewComponent],
 })
 export class ViewComponent implements OnInit {
-  totalBooks: number = 0;
-  totalOnLoan: number = 0;
-  totalAvailable: number = 0;
+  totalBooks; totalOnLoan; totalAvailable = 0;
 
   constructor(private archiveService: ArchiveService) {}
 

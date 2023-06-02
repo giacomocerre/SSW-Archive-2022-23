@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports:[CommonModule, IconComponent]
 })
 export class InputComponent implements InputInterface{
-  @Input() placeholder: string = "input placeholder";
+  @Input() placeholder: string;
   @Input() isRequired: boolean = false;
   @Input() icon: IconInterface;
   @Output() onChange = new EventEmitter<string>();

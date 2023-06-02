@@ -1,7 +1,4 @@
 <div class="app-archive-viewer">
     <app-input placeholder="Cerca nell'archivio" [icon]="{name:'search', size:20}" (onChange)="search($event)"></app-input>
-    <app-archive *ngIf="books.length > 0 "[books]="books"></app-archive>
-    <div class="app-message-empty"*ngIf="books.length === 0">
-        <p>Non ci sono libri da mostrare</p>
-    </div>
+    <app-archive [books]="books" [bookToShow]="1"></app-archive>
 </div>

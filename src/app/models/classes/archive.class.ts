@@ -21,7 +21,7 @@ export class Archive {
    */
   addBook(book: Book) {
     this.books.push(book);
-  } 
+  }
 
   /**
    * Rimuove un libro dall'archivio.
@@ -105,8 +105,13 @@ export class Archive {
       book.user = undefined;
     }
   }
-
-  getRecentBooks(n: number): Book[] {
-    return this.books.sort((a: Book, b: Book) => b.date.getTime() - a.date.getTime()).slice(0, n);
+  
+  /**
+   * Verifica se una posizione nell'archivio è già occupata da un libro.
+   * @param position La posizione da controllare.
+   * @returns True se la posizione è occupata, false altrimenti.
+   */
+  isPositionTaken(position: string): boolean {
+    return this.books.some((book) => book.archivePosition === position);
   }
 }

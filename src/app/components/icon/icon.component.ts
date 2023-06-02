@@ -7,6 +7,6 @@ import { IconInterface } from '../../models/interfaces/components.interfaces';
   styleUrls: ['./icon.component.scss'],
   standalone: true,
 })
-export class IconComponent {
-  @Input() icon: IconInterface;
+export class IconComponent{
+  @Input() icon: IconInterface;  
 }

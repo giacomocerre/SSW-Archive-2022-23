@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, IconComponent],
 })
 export class ButtonComponent {
-  @Input() label: LabelInterface;
+  @Input() label: LabelInterface; // stabilisce il valore della label del button ed eventualmente se ha un icona
   @Input() classes: string;
   @Input() icon: IconInterface;
   @Output() click = new EventEmitter();

@@ -7,7 +7,8 @@
         (click)="closeLoan.emit(false)"
       ></app-icon>
     </h2>
-    <p>Inserisci i dati di chi prende il libro</p>
+    <p>Inserisci i dati di chi prende il libro:</p>
+    <p class="app-selected-book">{{book.archivePosition}} | {{book.title}} - {{book.author}}</p>
     <div class="app-loan-container">
       <div class="app-add-input-form">
         <app-input
@@ -24,6 +25,7 @@
         ></app-input>
         <app-button
           (click)="save()"
+          classes="app-save-book-button"
           [label]="{ icon: false, value: 'Salva' }"
         ></app-button>
       </div>

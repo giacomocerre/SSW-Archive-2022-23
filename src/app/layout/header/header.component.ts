@@ -11,5 +11,5 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   @Input() title: string;
-  toggleAdd: boolean = false;
+  toggleAddForm: boolean = false; // Flag per mostrare o nascondere il modulo aggiungi libro.
 }
