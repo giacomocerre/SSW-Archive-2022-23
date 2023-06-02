@@ -1,13 +1,19 @@
 <div class="app-archive">
-  <table>
+  <div
+    *ngIf="books.length > bookToShow || books.length === 0"
+    class="app-message-archive"
+  >
+    <p>Sono stati trovati {{ books.length }} libri</p>
+  </div>
+  <table *ngIf="books.length <= bookToShow && books.length !== 0">
     <thead>
       <tr>
-        <th>Aggiunto in data</th>
+        <th>Data</th>
         <th>Posizione</th>
         <th>Titolo</th>
         <th>Autore</th>
-        <th>Disponibilità</th>
-        <th>Noleggiato a</th>
+        <th>Status</th>
+        <th>Noleggio</th>
         <th></th>
       </tr>
     </thead>
@@ -17,7 +23,7 @@
         <td>{{ book.archivePosition }}</td>
         <td>{{ book.title }}</td>
         <td>{{ book.author }}</td>
-        <td>
+        <td class="archive-td-icon">
           <app-icon
             [icon]="{
               name: book.onLoan ? 'cancel' : 'check_circle',
@@ -48,5 +54,9 @@
       </tr>
     </tbody>
   </table>
-  <app-loan-form *ngIf="showLoan" (closeLoan)="showLoan=$event" [id]="selectedID"></app-loan-form>
+  <app-loan-form
+    *ngIf="showLoan"
+    (closeLoan)="showLoan = $event"
+    [id]="selectedID"
+  ></app-loan-form>
 </div>

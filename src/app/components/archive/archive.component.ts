@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Book } from 'src/app/models/classes';
+import { Book } from '../../models/classes';
 import { IconComponent } from '../icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
 import { LoanFormComponent } from '../loan-form/loan-form.component';
-import { ArchiveService } from 'src/app/services/archive.service';
+import { ArchiveService } from '../../services/archive.service';
 
 @Component({
   selector: 'app-archive',
@@ -15,25 +15,32 @@ import { ArchiveService } from 'src/app/services/archive.service';
 })
 export class ArchiveComponent {
   @Input() books: Book[];
-  book: Book;
-  showLoan: boolean = false;
-  showSingle: boolean = false;
+  @Input() bookToShow: number; //Numero massimo di libri da visualizzare.
+  showLoan: boolean = false; // Flag per mostrare o nascondere il modulo di prestito.
   selectedID: string;
 
   constructor(private archiveService: ArchiveService){}
 
+  /**
+   * Rimuove un libro dall'archivio.
+   * @param id - ID del libro da rimuovere.
+   */
   removeBook(id:string) {
     this.selectedID = id;
     this.archiveService.removeBookFromArchive(id);
   }
 
+  /**
+   * Visualizza il modulo di prestito o esegue un'azione specifica sul libro.
+   * @param id - ID del libro selezionato.
+   * @param onLoan - Flag che indica se il libro è in prestito.
+   */
   viewLoan(id:string, onLoan:boolean){
     this.selectedID = id;
     if(onLoan){
-      this.archiveService.onLoanAction(id, 'return');
+      this.archiveService.onLoanAction(id, 'return'); // restituisce il libro se gia in prestito
     }else{
       this.showLoan = true;
     }
   }
-
 }
